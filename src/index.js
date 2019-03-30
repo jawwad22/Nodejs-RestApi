@@ -10,6 +10,9 @@ app.use((req,res,next)=>{
 app.use(personRoute);
 app.use(express.static('public'))
 
+app.use((res,req,next)=>{
+    res.status(404).send( `we think we are lost`)
+})
 
 
 const PORT=process.env.PORT || 3000;
